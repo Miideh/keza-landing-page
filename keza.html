@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keza Africa</title>
+    <link rel="stylesheet" type="text/css" href="text.css">
+    <style>
+        @keyframes scroll {
+            0% {
+                transform: translatex(0%);
+            }
+
+            100% {
+                transform: translatex(-100%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="header-container">
+            <header>
+                <img src="data:image/png;base64,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"
+                    alt=kezalogo>
+                <a href="#">Company</a>
+                <a href="#">Smartphones</a>
+                <a href="#">FAQs</a>
+                <div class="buttons">
+                    <button type="button" class="btn sign-up">Sign Up</button>
+                    <button type="button" class="btn apply-now">Apply Now</button>
+                </div>
+            </header>
+    </nav>
+    <div class="container">
+        <div class="left-side">
+            <div class="hero-text">
+                <div class="text">
+                    <div class="not-bar">
+                        <p>You can now get Starlink and pay monthly with Keza Africa!🥳</p>
+                    </div>
+                </div>
+                <div class="main-text">
+                    <h1>Own a <span style="color: rgb(121, 43, 43);">Smartphone</span> today,
+                    </h1>
+                    <h1>Pay Monthly.</h1><br>
+                    <div class="hero-para">
+                        <div class="new-p">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAXCAYAAAAP6L+eAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKPSURBVHgBpZWxctpAEIZ3T2ImTFLwCFQZSBP8BJEDqW0XwSEN5glsP4HhCew8AbgiwZnB7iHoDUIVa1LxBqGIEybodNk9cbJwJIEnf4EY7d53u3e7K4QUdZ1iIW/njwQErwCxAgqK2oAwQwUzFcClDMBtuN4saT0mvbyqlc4U4AmAKkCWwk16b0deB7LAfadUtG3oKgBnZXR9hEtY3kc2cF5UpAgqtoCm8aMAptLHg3j0GIdaOZjolClVidBqjDwXMvSp+nwfQZwTpcjR3y0XOy13NmebME4caQSVsLsJyjocf79mX17Da5/ZT4bGpsGD16UjnZaBplxIktg3hOOcGR9r5ZMIrG+dJBV00qCDN+Xjq1r5PA2uQLZWwDONjBbSpdTdb1NI0aBa/gGoCrSgnVQFLKqmCUctAXajM86Cakk06ba5HBNdAG/4aSloCthSvLFJNw0ufN8N/4Bj64sTq67aQkg1S81TWcEhfiw5WM6WYNHOWMBBraTgP1QfeWtNZni2UsEBoKhsC6KI9+hX+xNh7RKHNF+Wkd8j9LlaagYIPQM9HHntuL1fKzl0EBPCTre+vE3QMMowE1AqBPOI5N2ywAHiRRaUJVAd89OnstPgp1a+zSmYdkwEEzAAPE2DcnWZWfN+fHutz7hPLy1BQwhwLn2185hZodfHJiMN/1bji9e7b+lqeUgtu8/jTy63H0QPxm2vPvbMzAiVk79bXPzswI46tQ3ieWzZ+DX8bKnpnVycGttauek6tPJdHXlonQUKPyje0KeZSwpysmApm8pK7cW/ND/9xYEZ8v+Ao/T4zJHGH25odRpKVIKdd6Pbi4emzAbhDQSCQ2X0UiFGH1ZBX2cJwc0v+ceNRxnXX9BdRQv76avgAAAAAElFTkSuQmCC"
+                                alt="">
+                            <h3>Select your preferred smartphone</h3>
+                        </div><br>
+                        <div class="new-p">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAXCAYAAAAP6L+eAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKPSURBVHgBpZWxctpAEIZ3T2ImTFLwCFQZSBP8BJEDqW0XwSEN5glsP4HhCew8AbgiwZnB7iHoDUIVa1LxBqGIEybodNk9cbJwJIEnf4EY7d53u3e7K4QUdZ1iIW/njwQErwCxAgqK2oAwQwUzFcClDMBtuN4saT0mvbyqlc4U4AmAKkCWwk16b0deB7LAfadUtG3oKgBnZXR9hEtY3kc2cF5UpAgqtoCm8aMAptLHg3j0GIdaOZjolClVidBqjDwXMvSp+nwfQZwTpcjR3y0XOy13NmebME4caQSVsLsJyjocf79mX17Da5/ZT4bGpsGD16UjnZaBplxIktg3hOOcGR9r5ZMIrG+dJBV00qCDN+Xjq1r5PA2uQLZWwDONjBbSpdTdb1NI0aBa/gGoCrSgnVQFLKqmCUctAXajM86Cakk06ba5HBNdAG/4aSloCthSvLFJNw0ufN8N/4Bj64sTq67aQkg1S81TWcEhfiw5WM6WYNHOWMBBraTgP1QfeWtNZni2UsEBoKhsC6KI9+hX+xNh7RKHNF+Wkd8j9LlaagYIPQM9HHntuL1fKzl0EBPCTre+vE3QMMowE1AqBPOI5N2ywAHiRRaUJVAd89OnstPgp1a+zSmYdkwEEzAAPE2DcnWZWfN+fHutz7hPLy1BQwhwLn2185hZodfHJiMN/1bji9e7b+lqeUgtu8/jTy63H0QPxm2vPvbMzAiVk79bXPzswI46tQ3ieWzZ+DX8bKnpnVycGttauek6tPJdHXlonQUKPyje0KeZSwpysmApm8pK7cW/ND/9xYEZ8v+Ao/T4zJHGH25odRpKVIKdd6Pbi4emzAbhDQSCQ2X0UiFGH1ZBX2cJwc0v+ceNRxnXX9BdRQv76avgAAAAAElFTkSuQmCC"
+                                alt="">
+                            <h3>Fill out the online application</h3>
+
+                        </div><br>
+                        <div class="new-p">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAXCAYAAAAP6L+eAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKPSURBVHgBpZWxctpAEIZ3T2ImTFLwCFQZSBP8BJEDqW0XwSEN5glsP4HhCew8AbgiwZnB7iHoDUIVa1LxBqGIEybodNk9cbJwJIEnf4EY7d53u3e7K4QUdZ1iIW/njwQErwCxAgqK2oAwQwUzFcClDMBtuN4saT0mvbyqlc4U4AmAKkCWwk16b0deB7LAfadUtG3oKgBnZXR9hEtY3kc2cF5UpAgqtoCm8aMAptLHg3j0GIdaOZjolClVidBqjDwXMvSp+nwfQZwTpcjR3y0XOy13NmebME4caQSVsLsJyjocf79mX17Da5/ZT4bGpsGD16UjnZaBplxIktg3hOOcGR9r5ZMIrG+dJBV00qCDN+Xjq1r5PA2uQLZWwDONjBbSpdTdb1NI0aBa/gGoCrSgnVQFLKqmCUctAXajM86Cakk06ba5HBNdAG/4aSloCthSvLFJNw0ufN8N/4Bj64sTq67aQkg1S81TWcEhfiw5WM6WYNHOWMBBraTgP1QfeWtNZni2UsEBoKhsC6KI9+hX+xNh7RKHNF+Wkd8j9LlaagYIPQM9HHntuL1fKzl0EBPCTre+vE3QMMowE1AqBPOI5N2ywAHiRRaUJVAd89OnstPgp1a+zSmYdkwEEzAAPE2DcnWZWfN+fHutz7hPLy1BQwhwLn2185hZodfHJiMN/1bji9e7b+lqeUgtu8/jTy63H0QPxm2vPvbMzAiVk79bXPzswI46tQ3ieWzZ+DX8bKnpnVycGttauek6tPJdHXlonQUKPyje0KeZSwpysmApm8pK7cW/ND/9xYEZ8v+Ao/T4zJHGH25odRpKVIKdd6Pbi4emzAbhDQSCQ2X0UiFGH1ZBX2cJwc0v+ceNRxnXX9BdRQv76avgAAAAAElFTkSuQmCC"
+                                alt="">
+                            <h3> Make a down payment</h3>
+                        </div><br>
+
+                        <div class="new-p">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAXCAYAAAAP6L+eAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKPSURBVHgBpZWxctpAEIZ3T2ImTFLwCFQZSBP8BJEDqW0XwSEN5glsP4HhCew8AbgiwZnB7iHoDUIVa1LxBqGIEybodNk9cbJwJIEnf4EY7d53u3e7K4QUdZ1iIW/njwQErwCxAgqK2oAwQwUzFcClDMBtuN4saT0mvbyqlc4U4AmAKkCWwk16b0deB7LAfadUtG3oKgBnZXR9hEtY3kc2cF5UpAgqtoCm8aMAptLHg3j0GIdaOZjolClVidBqjDwXMvSp+nwfQZwTpcjR3y0XOy13NmebME4caQSVsLsJyjocf79mX17Da5/ZT4bGpsGD16UjnZaBplxIktg3hOOcGR9r5ZMIrG+dJBV00qCDN+Xjq1r5PA2uQLZWwDONjBbSpdTdb1NI0aBa/gGoCrSgnVQFLKqmCUctAXajM86Cakk06ba5HBNdAG/4aSloCthSvLFJNw0ufN8N/4Bj64sTq67aQkg1S81TWcEhfiw5WM6WYNHOWMBBraTgP1QfeWtNZni2UsEBoKhsC6KI9+hX+xNh7RKHNF+Wkd8j9LlaagYIPQM9HHntuL1fKzl0EBPCTre+vE3QMMowE1AqBPOI5N2ywAHiRRaUJVAd89OnstPgp1a+zSmYdkwEEzAAPE2DcnWZWfN+fHutz7hPLy1BQwhwLn2185hZodfHJiMN/1bji9e7b+lqeUgtu8/jTy63H0QPxm2vPvbMzAiVk79bXPzswI46tQ3ieWzZ+DX8bKnpnVycGttauek6tPJdHXlonQUKPyje0KeZSwpysmApm8pK7cW/ND/9xYEZ8v+Ao/T4zJHGH25odRpKVIKdd6Pbi4emzAbhDQSCQ2X0UiFGH1ZBX2cJwc0v+ceNRxnXX9BdRQv76avgAAAAAElFTkSuQmCC"
+                                alt="">
+                            <h3> Your smartphone is delivered.</h3>
+
+                        </div><br>
+                    </div>
+                    <div class="buttons1">
+                        <button class="btn1">Get a Smartphone</button>
+                        <button type="button" class="btn2">
+                            <img width="40px"
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAAA3CAYAAABHGbl4AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAASJSURBVHgB3ZrPbxtFFMff/NqN7cR1jV0TkgOiViQsBAghoUpIuBc4QUUOuYBEzxx65cLB1177D1AhuPTAoRfEqRYSVJEQQgIlIqqEImygdeI6sezd9c7OsLOVU8exHf/YXXvzkZL1zm4kf/PevPdm5iEIkFIJ8HvlIv69UiEvZk3cHc/qeft6ucwhQBD4yL1r67GWTnXqxGJxBprDEBv1viax1TQczolhNCvUuPXokQU+MbOwB0WgNb2QtLmdYpRhmAFCpG1Zprnq/HV4vQwzWXRqYco6EIungdEYBADnRnMWgRMLU/Pm9Z+vZjjSkxAC0wqcSNhXxZdTGmHpWV1uUpSLUirqN+7/2Rz3b8YSpqz01i8badOmKZgjSxZvfFTeOxjn3XOFqeBwpL222kFChwVARdJLnT/+Pc81RwpTour41bXzwnbYKNdMt3ero8SRYQ8WVZRCSkQsPZMofHLQLJdBDnpnaBBQ7reIoro4DmKFHzdWhz0fKOzeB4X0osypkbg59H5xIzPo0Rlh37yTV/kpDRHB1GnKKxb6OCVMhfVYgl2GiEEur1xR37137NRN4WEhtcjzahjefHO/e+/YiTAVBSFCLtgP5iTVa7WTD0+1q5EVpRDUwb1W84QppZJrgVTpYdJrNe9X/vv8chTnVj/Kam+U3/RWHZ4wLYFX4IJg43ZCXYkyXfaf3BW4IGDJSOGzJ0fkc2t9CXSfF41CrIGQX7oVdhIQ2oUQkVii7I7expBMBhE0bro/m1LK2+CI257QEGF6RscWSP9rQgm9HrDp3n+LhNyEkDAI1zGVHQrBsxam9RAxNKxxLcz9i3CshxnBc8hfJ9bDGAJJM0RiGupuUx+bgotbEBDzFOZuuASXCrC7NS0gZNxNiiqS8lOJ0XcQAG7NKOiSpI4TpuUQ3CUU3xECxt78nBSb2YK2GXTcRBZ4AFFWwlJ+IQnZFgH7COkIG19ijg1Bo6zE8IeSkm0IAR4Hix7XREfze+Mau0FByFCt1EsCI4uuxdbbNXgCvoLQXSzktmB4V0L47O84HayOTIktfXdHJQrmgNr+ViejXjRkcacFFwTLIqa6esLMw/aFEXawbzbU1RO29bBigM0NiDquhu4B/fPEbLTrEHH0ZXTc/XwiLOpWU0Gj9yj3dCkVYatV9+z/eu9PCVNWW2K8ARGDc9zsb345U/z++vZePYi8FhTKBVedzOGZ8f4BdfT5LkmZelKsEEx8bUkKgoyZ+3tQX9bA5Yoy67KJa7DgMEs7GNZsNnQdduMnL8IscjCpf1z+bWg8ONfV1Hk0LN65WX3rh52R//Sx5tDX7+cSxEnmwm416kdtYywncG2c1qOxg8ODYpHW8eO59X08a1rJVcdt4Jw46s3JNes717YapVJp7OXqVOFcWe+pVk9zxINt7XNLvKx46fE0bbYz5akgBKp5hEBv0Xbj2Ktfp8SXBKwEVo1KPKaxhKnx2KRBRolhElkt0WntF28eT+JywwiksriTz+upV5p0Cb2gu3Uc6z3RITYRlkYExHRH1I469UOw/Gxy7vI/f4D34wQHPCUAAAAASUVORK5CYII="
+                                alt="">
+                            <p>Watch the video.</p>
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-side">
+            <img width="800px" height="800px"
+                src="https://keza.africa/static/media/Group%203705grp%20hero.bbb1ebde4d1df5b198d4.png" alt="hero">
+        </div>
+    </div>
+    <div class="starlink">
+        <div class="new-starlink">
+            <img src="https://keza.africa/static/media/shutterstock_2255427501starlinnk-img.69725586881eb8e24ecd.png"
+                alt="starlink">
+        </div>
+        <div class="starc">
+            <div class="starcom">
+                <div class="new-logo">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE0AAABNCAYAAADjCemwAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAfESURBVHgB7ZxPbBRVHMd/b3ba1BZ0ORQNHGzVNgUSuhzABA5tKeDBgy2JCDEWOKoYSQgHvEAvkGCMmOCfWymGEDGy5Si2dDnIgR5sScDSBl0SIWgPrsLa6u7M833fdpfd7W53Zt7sdP/0k2z238zsvu/8fr/33u/9YbREDHQ2+ev0ugAjFtA5bzcZ9xNjAfklp6bMo1mEyAwz+czHDdLuc/E8F58bPxgKR8hjGHnIxR1tnTrxNzhRp/jpALkCHxeFCMWJXdk3PBkiDyi6aBc725p0nfZzYodFAf1UTBiFNZNCMYP694Umw1QkiiZawqroeMKqvEfjdC7GaLAY1ue6aEstVjbSdeN00E3Lc000BPaVvrpPTUYHqASRlueS27oi2jfdrT2M+QaKHrNUETGPhHB7rk2eIwWURIN1rdCfEa7ID1MZIZouZ57EZ/udNlcci4Za0VdDowvbVGWCsDojRl1O3FUjB1zqXB8oa8GA+O8ow4WdLbbbi7YtDbWjj1iw5OOXZVgkxuJdb/8wPW75DLIBLIx08yeqOOwJZ9k9E4LxUapIuL+G65Zd1ZJoCPpUY1aQS+ZCCEe+oCxrAQqKhmZF2Qd9q6By0HkQZV7ssIKioR1WFYKlYAFZ5sWOWOzLS9vbDghZB6gK4dzsfWtkaijXd3lFK/vGqzIsEo3PNufqNeR1zxofVZlbZsP9+dw0p6VJK9PpV1pG9O9FVysrJ5fT0kSmtSrjWC6QG8z+bIFo6CaVSgKxFIAW0CT9Mz37oPmsa9GoaVhJtStWUv3za1OfRe5NUiz6mOzSIK7x3MttFHvyt+NrWGHe2kLJ9xkxrVixDEK17u6jxvYt8pGL6O8PaGbiJoW/D9LMrTFL123a1UObj55KvYdw05cHxXXG5PXcJBqfW5WsSTMsDTWmSe4BsTb0HaIWIVghYDUNu3qFEL2ywHfOn6Xw1SGyg19YXVLE8NWguMbnrolXr9ch0XoCrzNimqm5F8vWbO2m1y+MWBIsGwiIwm8+epJqhCs7AeJ3fDJIjRu3kBuIbO+Hydcp0WSwc6ldtqHvfdrWf1Zamgoo+M6vglJEJ+C8TiFca6/9G7cQ7k9WCCnRfJz1kAtAsPXvHCK3QMFhMU6FA+3vHZM3QBXGuNRIe/qB2UGKwCXdFCxJwl1PkgqBd4/JmKeCMKx2PEvRgiIVwhXnVqBgm8QdLRaodVXcDLExvaZ1AtpsSBtJ0eb0OuXJKAj49QouZIX1oiZ2WjEAWBqaKSpgppMUjblgZW7EjEJAsBbFoA7hVYBWCdE4VxKtsX2zkgXYoXX3flIBN1ilGaJx3i5F0xi9SAqs2dZNXoGb439JLaCr/F+T8VVSNM7U2merN75KXpKvK2aVVQq1qMZYwtKEfI5HmXDnvXLNJPUvqFU4qucnRGPOh+ZqG54lr6lV7GmoNJTRa9JpCfnx+Af0172fyS7/iVQQQIfebqfeDZZUNOTBkIVAa91rFx/7+CNyirJoKHTsyWOlQjcGtijXiHbA/x0j56IlYhpnSnPxI7/Yd7F0oo9+Iy9Ry7GxSEI0jSuJ9ofIuKoQffSQvCRyT+kmh+d7BBQmBaYvnycVHt4YIS9BOtwpjHjC0kxO90kBxIiZW86tDWMDuIZXPLgxTE4xGJ+Y7xEwy7MA8zF22nlgBVPBQfICjB0o3SCuJdwTi7NIEQTX8S+d56vg4l5YGwZbVIBWUrS6+JyyaAAFx510AgS7/fVZKia3XRidwso/KVqvGM9jLlgbgLU5jW8QfSqoVqnkA5XNHeWbwuRSydQYAefadXIBWEzoyH7HhZ/44pRja80HBpFvnlZPxZvMlBqlRBO1gqudOBQeXZV/HLgDznPL4tA3DR3pc2XKAudMapQxLeFS97o/VTIe+UAqvOm1ngUZU1jkYq6M8zAk6GTsASLdFqP0qm3IFKItu2dkshkvM/qenPHPWI6pRarA3fDA4LH/lXVygAOvC1khzkGbau3WHZbFg1hTQqjp7wbdnhATSr7ItLTOlgDpvpJdXIGMLQRfLZ7TEwTRRw9k3MJjRrFLlw8jTs3JdVQLZkJ+u6NtdHl+WiYm8St7h++mxv4WTOqLE/XTMhmIgfQz6e9zzrldtranYDn3m8OTXemf5Zxzu2xtT8H69+zPcoqG2cyckzc96FKG07lci2jzriOoNeYOq2Z0yxrRLjOM3B6XVzT0R01uVq2bGjz/zgqLLijbe+3uGcaqz01N0cjft8iOCgVX4ekxuKlaOrysEGWdjf17YrFDCooGNxW+3VUV8S0Rx7oKbT1haWWx9G2DVbZwKJuh9VrZcsLyGvY9oTvjnIyDVKkIo0AZrRxqWTSARaNYPFpRFoeyxLVNVgUDtkQDcrWtdNUKqBxQBhsWlkRt2xwfjZLihMAlYz7oe7ZtDsCP1Rhzm8qxu4V2WFT8d6fbgrmyFdjF7W0HfExkfEvd6kT8QmWWb0G/VRxbWjpoPcPUS9rqROc7asw2qwoG3N/eMLFx5kBJbW8oUl1u7g3pumhJlnpvyGKIlXbt4gLL03x0QvxQR9FjHmKWCPJxZgzZ2drLLkUXLR1YH+O8R1QaHdylzYExnUKkca5zxoYqZnPgfGRvQ40FIHIRCNY0ZA9Yo9Wu8QgmH+IRZ2xiKbehXsYB/wPF1Eti1cBekgAAAABJRU5ErkJggg=="
+                        alt="keza-logo">
+                </div>
+                <div class="starlink-newlogo">
+                    <img src="data:image/png;base64,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"
+                        alt="starlink-logo">
+                </div>
+            </div>
+            <div class="new-para1">
+                <h1>Access the <span style=" color: rgb(121, 43, 43);">fastest internet in the<br> world</span> and
+                    <span style=" color: rgb(121, 43, 43);">pay later with Keza</span>
+                </h1><br>
+                <p>Power up your internet connection with Starlink - Enjoy monthly repayment plans.</p><br>
+                <div class="buttons">
+                    <button type="button" class="btn apply-now">Order Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="smartphone">
+        <h1 class="header-h1">Smartphones from all your favorite brands</h1>
+        <h3 class="h-p2">Trending this week.</h3>
+    </div>
+    <div class="new-pict">
+        <div class="pict">
+            <div class="icon">
+                <div class="staricon">
+                    <span class=" lazy-load-image-background blur lazy-load-image-loaded"
+                        style="color: transparent; display: inline-block;">
+                        <img alt="img-6"
+                            src="https://keza.africa/static/media/Iconstar.909687b53794857e73ff37ddeeec9ec2.svg"></span>
+                </div>
+                <div class="smt1">
+                    <span class=" lazy-load-image-background blur lazy-load-image-loaded"
+                        style="color: transparent; display: inline-block;">
+                        <img alt="img-6" src="https://fdn2.gsmarena.com/vv/bigpic/oppo-reno7-4g.jpg">
+                    </span>
+                </div>
+                <div class="product-info">
+                    <p>New</p><br>
+                    <span>
+                        <h2>Oppo Reno</h2>
+                    </span>
+                    <h4>256gb</h4><br>
+                    <p><span>From</span>
+                        <span style="font-weight:700; font-size: large;">₦30,357 </span>
+                        <span>monthly</span>
+                    </p>
+                    <div>
+                        <button type="button" class="btn buy">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="icon">
+                <div class="staricon">
+                    <span class=" lazy-load-image-background blur lazy-load-image-loaded"
+                        style="color: transparent; display: inline-block;">
+                        <img alt="img-6"
+                            src="https://keza.africa/static/media/Iconstar.909687b53794857e73ff37ddeeec9ec2.svg"></span>
+                </div>
+                <div class="smt1">
+                    <span class=" lazy-load-image-background blur lazy-load-image-loaded"
+                        style="color: transparent; display: inline-block;">
+                        <img alt="img-6" src="https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-s10-plus-new.jpg">
+                    </span>
+                </div>
+                <div class="product-info">
+                    <p>New</p><br>
+                    <span>
+                        <h2>Samsung Galaxy S10</h2>
+                    </span>
+                    <h4>256gb</h4><br>
+                    <p><span>From</span>
+                        <span style="font-weight:700; font-size: large;">₦30,357 </span>
+                        <span>monthly</span>
+                    </p>
+                    <div>
+                        <button type="button" class="btn buy">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="icon">
+                <div class="staricon">
+                    <span class=" lazy-load-image-background blur lazy-load-image-loaded"
+                        style="color: transparent; display: inline-block;">
+                        <img alt="img-6"
+                            src="https://keza.africa/static/media/Iconstar.909687b53794857e73ff37ddeeec9ec2.svg"></span>
+                </div>
+                <div class="smt1">
+                    <span class=" lazy-load-image-background blur lazy-load-image-loaded"
+                        style="color: transparent; display: inline-block;">
+                        <img alt="img-6" src="https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13.jpg">
+                    </span>
+                </div>
+                <div class="product-info">
+                    <p>New</p><br>
+                    <span>
+                        <h2>Iphone 13</h2>
+                    </span>
+                    <h4>128gb/256gb</h4><br>
+                    <p><span>From</span>
+                        <span style="font-weight:700; font-size: large;">₦85,750 </span>
+                        <span>monthly</span>
+                    </p>
+                    <div>
+                        <button type="button" class="btn buy">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="icon">
+                <div class="staricon">
+                    <span class=" lazy-load-image-background blur lazy-load-image-loaded"
+                        style="color: transparent; display: inline-block;">
+                        <img alt="img-6"
+                            src="https://keza.africa/static/media/Iconstar.909687b53794857e73ff37ddeeec9ec2.svg"></span>
+                </div>
+                <div class="smt1">
+                    <span class=" lazy-load-image-background blur lazy-load-image-loaded"
+                        style="color: transparent; display: inline-block;">
+                        <img alt="img-6" src="https://fdn2.gsmarena.com/vv/bigpic/vivo-y1s.jpg">
+                    </span>
+                </div>
+                <div class="product-info">
+                    <p>New</p><br>
+                    <span>
+                        <h2>vivo y1S</h2>
+                    </span>
+                    <p>32gb</p><br>
+                    <p><span>From</span>
+                        <span style="font-weight:700; font-size: large;">₦12,523 </span>
+                        <span>monthly</span>
+                    </p>
+                    <div>
+                        <button type="button" class="btn buy">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="brw1">
+            <button type="button" class="btn brw">Browse Smartphones</button>
+        </div>
+        <div class="kezatest">
+            <h1>Why Keza?</h1>
+        </div>
+        <div class="kezavideo">
+            <iframe width="1300" height="541" src="https://www.youtube.com/embed/Zx6bKBy2Dco"
+                title="Introducing Keza Africa: The smart way to own a smartphone" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+        <div class="kezatest">
+            <h1>Own a smartphone with ease</h1>
+            <h3>For your business or for you, smartphones are essential and Keza Africa understands.</h3>
+        </div>
+    </div>
+    <div class="whiteback">
+        <div class="halfback">
+            <div class="textk">
+                <h2 style="font-weight: 600; font-size: 32px;">Keza for business</h2><br>
+                <h3 style="font-size: 17px;">Make smartphones affordable and accessible for you, your employees, or your
+                    customers. Keza
+                    Africa will take your business to the next level, easily!</h3><br>
+                <div class="newb">
+                    <button type="button" class="btn new-apply">Apply Now</button>
+                    <button type="button" class="btn apply">
+                        <h3>Learn More</h3>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAPCAYAAADphp8SAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACvSURBVHgBpZI9DgIhEEY/ljUWNnsESkq9AZvoITydpYkegj2GnVzCxGSDONMZA4TZfQlQTOZlflBo5HayT37jjPE8PcJ/vEMrHzoJRm/gr86axaIYMZIolGQKAjhZa3jKMnTCb5siUU0mFuVkr/l9UPej9QlwWAFVM3WJhoeVsGNRaxdnhl2/9VTLnjfJGxWLchLxsEsSjjWLahKm+WfXJEzfKkJSA91ZiRhurxT7AmPGYaR+KUKVAAAAAElFTkSuQmCC"
+                            alt="">
+                    </button>
+                </div>
+            </div>
+            <div>
+                <img width="390" height="390"
+                    src=https://keza.africa/static/media/pexels-antoni-shkraba-6632508%203man-phone.2ec765fb2584614f90bc.png
+                    alt="starlink-logo">
+            </div>
+        </div>
+    </div>
+    <div class="os-text">
+        <div class="new-idcal">
+            <h1>Get a <span style=" color: rgb(121, 43, 43);">smartphone</span>, whatever your budget!</h1><br>
+            <h4>We can suggest suitable phones that will be very affordable to you based on your monthly earnings. Give
+                it a try!</h4>
+        </div>
+        <div class="input">
+            <div class="new-order">
+                <p>How much do you earn in a month?</p>
+                <input name="income" placeholder="65000" class="income-a" value="0">
+            </div>
+            <div class="pay-c">
+                <div class="howp">
+                    <div class="mont">
+                        <p>How would you like to pay?</p>
+                        <div class="payments">
+                            <select name="Payment" id="Payment">
+                                <option value="monthly">Monthly</option>
+                            </select>
+                            <div class="newpay">
+                                <select name="Payment" id="Payment">
+                                    <option value="number">1</option>
+                                    <option value="number">2</option>
+                                    <option value="number">3</option>
+                                    <option value="number">4</option>
+                                    <option value="number">5</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="buttons12">
+                            <button type="button" class="btn reset">Reset</button>
+                            <button type="button" class="btn geta">Get a match</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flexible">
+        <div class="whatypu">
+            <h1 style="text-align: center;">What you get</h1><br>
+            <h4 style="text-align: center;">Your dream phone on a convenient and affordable payment plan</h4>
+        </div>
+        <div class="new-proc">
+            <div class="proct">
+                <div class="protected">
+                    <img alt="img-6"
+                        src="https://keza.africa/static/media/Vectorwallet.b8e3e7af60117ac8d9747b9f36c3a96e.svg"></span>
+                </div>
+                <div class="product-info">
+                    <h2>Flexible Payment Plans</h2><br>
+                    <p><span style="font-size:19px; font-weight: 20;">We enable you to pay for <br> your phone for up to
+                            6 <br>months!</span>
+                    </p>
+                </div>
+            </div>
+            <div class="proct">
+                <div class="protected">
+                    <img alt="img-6"
+                        src="https://keza.africa/static/media/Group%201woman.41bff893f5dc6035c77f1b39c0173484.svg"></span>
+                </div>
+                <div class="product-info">
+                    <h2>Protection & Warranty</h2><br>
+                    <p><span style="font-size:19px; font-weight: 20;">There is a warranty on every <br>phone, and if
+                            anything goes<br> wrong with it, we'll fix it for<br>
+                            you.</span>
+                    </p>
+                </div>
+            </div>
+            <div class="proct">
+                <div class="protected">
+                    <img alt="img-6"
+                        src="https://keza.africa/static/media/Vectorhand.a8266e2e435b73596748959e8e87951f.svg"></span>
+                </div>
+                <div class="product-info">
+                    <h2>Guaranteed Upgrade</h2><br>
+                    <p><span style="font-size:19px; font-weight: 20;text-align: center;">Get a smartphone today?
+                            <br>Yes. Want to upgrade in a year?<br> Yes, too!</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="whatypu">
+        <h1 style="text-align: center;">From the people who use <span style=" color: rgb(121, 43, 43);"> Keza</span>
+        </h1><br>
+        <h3 style="text-align: center;">Don’t take our word for it? Here’s what our customers have to say.</h3>
+    </div>
+    <div class="whatyoup">
+        <div class="new-starlink">
+            <img src="https://keza.africa/static/media/pexels-picha-6210313.229b0abcf460ec6d0c59.png" alt="starlink">
+        </div>
+        <div class="new-para1">
+            <h2>“I had been hoping a service like Keza existed. As soon as I saw someone post a picture of her phone
+                from Keza I had to get on board.
+                This is the most convenient thing ever! ”
+            </h2><br>
+            <h4 span style="font-size: 30px; font-weight: 100; text-align: center;">Tope(iphone 13 mini)</h4><br>
+
+        </div>
+    </div>
+    </div><br>
+    <div class="foot1">
+        <div class="newpara1">
+            <h1 span style="font-weight: 400; text-align: center;">Buy a smartphone and pay<br> conveniently in monthly
+                instalments
+            </h1><br>
+            <h4 span style="font-size: 30px; text-align: center;">Explore our services personally or as a business</h4>
+            <br>
+        </div>
+        <div class="buttons123">
+            <button type="button" class="btn kfy">Keza for you</button>
+            <button type="button" class="btn kezabusi">Keza Business</button>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <img src="data:image/png;base64,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"
+                alt=kezalogo>
+            <div>
+                <h3 class="link">Company</h3>
+                <a class="link" href="#">About Us</a>
+                <a class="link" href="#">Keza for you</a>
+                <a class="link" href="#">Keza for business</a>
+                <a class="link" href="#">FAQs</a>
+            </div>
+            <div>
+                <h3 class="link">Legal</h3>
+                <a class="link" href="#">Terms and Condition</a>
+                <a class="link" href="#">Keza Insurance Policy</a>
+                <a class="link" href="#">Privacy Policy</a>
+            </div>
+            <div>
+                <div class="link-images">
+                    <a href="#"><img
+                            src="https://keza.africa/static/media/Vectortwiiter.49effa6a090f095cdec49708068a1ffd.svg"
+                            alt="">
+                    </a>
+                    <a href="#"><img
+                            src="https://keza.africa/static/media/Vectorinstagram.c0617b1de948bd79aac8a017e5d58101.svg"
+                            alt="">
+                    </a>
+                    <a href="#"><img
+                            src="https://keza.africa/static/media/Vectorwhatsapp.c8c2922f61b085065b5e2dcd9273634a.svg"
+                            alt="">
+                    </a>
+                    <a href="#"><img
+                            src="https://keza.africa/static/media/Path%202520linkdin.5b92472986aa8ce3d871fe4417820d81.svg"
+                            alt="">
+                    </a>
+                </div>
+                <div>
+                    <a class="email" href="#">support@keza.africa</a>
+                    <a class="email" href="#">tel:+2349161112671</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <h4>Copyright © 2022. Keza Africa. All rights reserved.</h4>
+        </div>
+    </footer>
+
+</body>
+
+</html>
